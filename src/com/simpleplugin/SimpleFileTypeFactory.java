@@ -1,4 +1,4 @@
-package dk.statsbiblioteket.bazel;
+package com.simpleplugin;
 
 import com.intellij.openapi.fileTypes.FileTypeConsumer;
 import com.intellij.openapi.fileTypes.FileTypeFactory;

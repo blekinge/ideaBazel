@@ -1,4 +1,4 @@
-package dk.statsbiblioteket.bazel;
+package com.simpleplugin;
 
 import com.intellij.lang.Language;
 
