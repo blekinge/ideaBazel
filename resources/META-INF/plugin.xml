@@ -29,7 +29,9 @@
       <lang.parserDefinition language="Simple" implementationClass="com.simpleplugin.SimpleParserDefinition"/>
       <lang.syntaxHighlighterFactory key="Simple" implementationClass="com.simpleplugin.SimpleSyntaxHighlighterFactory"/>
       <colorSettingsPage implementation="com.simpleplugin.SimpleColorSettingsPage"/>
-  <!-- Add your extensions here -->
+      <annotator language="JAVA" implementationClass="com.simpleplugin.SimpleAnnotator"/>
+
+      <!-- Add your extensions here -->
   </extensions>
 
   <actions>
