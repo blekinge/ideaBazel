@@ -31,6 +31,8 @@
       <colorSettingsPage implementation="com.simpleplugin.SimpleColorSettingsPage"/>
       <annotator language="JAVA" implementationClass="com.simpleplugin.SimpleAnnotator"/>
       <codeInsight.lineMarkerProvider language="JAVA" implementationClass="com.simpleplugin.SimpleLineMarkerProvider"/>
+      <completion.contributor language="Simple" implementationClass="com.simpleplugin.SimpleCompletionContributor"/>
+
 
 
       <!-- Add your extensions here -->
