@@ -1,27 +1,28 @@
-package com.simpleplugin.psi;
+package dk.statsbiblioteket.bazel.psi;
 
 import com.intellij.extapi.psi.PsiFileBase;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.psi.FileViewProvider;
-import com.simpleplugin.*;
+import dk.statsbiblioteket.bazel.BazelFileType;
+import dk.statsbiblioteket.bazel.BazelLanguage;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 
-public class SimpleFile extends PsiFileBase {
-    public SimpleFile(@NotNull FileViewProvider viewProvider) {
-        super(viewProvider, SimpleLanguage.INSTANCE);
+public class BazelFile extends PsiFileBase {
+    public BazelFile(@NotNull FileViewProvider viewProvider) {
+        super(viewProvider, BazelLanguage.INSTANCE);
     }
 
     @NotNull
     @Override
     public FileType getFileType() {
-        return SimpleFileType.INSTANCE;
+        return BazelFileType.INSTANCE;
     }
 
     @Override
     public String toString() {
-        return "Simple File";
+        return "Bazel File";
     }
 
     @Override

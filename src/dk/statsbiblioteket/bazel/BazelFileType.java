@@ -1,4 +1,4 @@
-package com.simpleplugin;
+package dk.statsbiblioteket.bazel;
 
 import com.intellij.openapi.fileTypes.LanguageFileType;
 import org.jetbrains.annotations.NotNull;
@@ -6,34 +6,38 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 
-public class SimpleFileType extends LanguageFileType {
-    public static final SimpleFileType INSTANCE = new SimpleFileType();
+public class BazelFileType extends LanguageFileType {
+    public static final BazelFileType INSTANCE = new BazelFileType();
 
-    private SimpleFileType() {
-        super(SimpleLanguage.INSTANCE);
+    private BazelFileType() {
+        super(BazelLanguage.INSTANCE);
     }
 
     @NotNull
     @Override
     public String getName() {
-        return "Simple file";
+        return "Bazel file";
     }
 
     @NotNull
     @Override
     public String getDescription() {
-        return "Simple language file";
+        return "Bazel BUILD file";
     }
 
     @NotNull
     @Override
+    //TODO Bazel files are BUILD and WORKSPACE, no extension...
     public String getDefaultExtension() {
-        return "simple";
+        return "BUILD";
     }
+
+    //TODO file charset
+
 
     @Nullable
     @Override
     public Icon getIcon() {
-        return SimpleIcons.FILE;
+        return BazelIcons.FILE;
     }
 }

@@ -1,0 +1,54 @@
+{
+  parserClass="dk.statsbiblioteket.bazel.parser.BazelParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="Bazel"
+  psiImplClassSuffix="Impl"
+  psiPackage="dk.statsbiblioteket.bazel.psi"
+  psiImplPackage="dk.statsbiblioteket.bazel.psi.impl"
+
+
+  elementTypeClass=
+  elementTypeHolderClass="dk.statsbiblioteket.bazel.psi.BazelTypes"
+  elementTypeClass="dk.statsbiblioteket.bazel.psi.BazelElementType"
+  tokenTypeClass="com.intellij.psi.tree.TokenSet"
+}
+
+file_input ::= ( ( simple_stmt | COMMENT ) ? '\n')*
+
+simple_stmt ::= small_stmt (';' small_stmt)* ';'?
+
+small_stmt ::= expr
+             | assign_stmt
+
+assign_stmt ::= IDENTIFIER '=' expr
+
+expr ::= INTEGER
+       | STRING+
+       | IDENTIFIER
+       | IDENTIFIER '(' arg_list? ')'
+       | expr '.' IDENTIFIER
+       | expr '.' IDENTIFIER '(' arg_list? ')'
+       | '[' expr_list? ']'
+       | '[' expr ('for' IDENTIFIER 'in' expr)+ ']'
+       | '(' expr_list? ')'
+       | '{' dict_entry_list? '}'
+       | expr '+' expr
+       | expr '-' expr
+       | expr '%' expr
+       | '-' expr
+       | expr '[' expr? ':' expr? ']'
+       | expr '[' expr ']'
+
+expr_list ::= (expr ',')* expr ','?
+
+dict_entry_list ::= (dict_entry ',')* dict_entry ','?
+
+dict_entry ::= expr ':' expr
+
+arg_list ::= (arg ',')* arg ','?
+
+arg ::= IDENTIFIER '=' expr | expr
+
+
